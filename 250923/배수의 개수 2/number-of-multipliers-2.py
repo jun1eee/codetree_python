@@ -1,5 +1,5 @@
 cnt = 0;
-for i in range (1, 10) :
+for i in range (1, 11) :
     a = int(input())
     if a % 2 == 1 :
         cnt += 1
