@@ -1,2 +1,2 @@
-for i in range(5, 19) :
+for i in range(5, 18) :
     print(i, end = ' ')
