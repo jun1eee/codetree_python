@@ -1,4 +1,4 @@
-arr = [list(map(int,input().split())) for _ in range(3)]
+arr = [list(map(int,input().split())) for _ in range(2)]
 
 for i in range(2) :
     print(f"{sum(arr[i])/4:.1f}", end=" ")
