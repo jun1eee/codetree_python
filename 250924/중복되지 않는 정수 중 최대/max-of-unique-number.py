@@ -8,6 +8,6 @@ for i in nums :
 max_val = -1
 for i in range(len(cnt)) :
     if cnt[i] == 1 :
-        max_val = nums[i-1]
+        max_val = i
 
 print(max_val)
