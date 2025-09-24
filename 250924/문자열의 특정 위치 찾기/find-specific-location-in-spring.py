@@ -1,2 +1,6 @@
 a, b = input().split()
-print(a.find(b))
+c = a.find(b)
+if c == -1 :
+    print('No')
+else : 
+    print(c)
