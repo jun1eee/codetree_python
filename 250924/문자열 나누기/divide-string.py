@@ -1,8 +1,7 @@
 n = int(input())
-arr = [input for _ in range(n)]
+arr = input().split()
 string = "".join(arr)
 
-for i in range(,,5) :
-    for j in range(i,i+5) :
-        print(string[j], end = "")
-    print()
+for i in range(0,len(string),5) :
+    print(string[i:i+5])
+    
