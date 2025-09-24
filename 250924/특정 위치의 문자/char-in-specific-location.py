@@ -1,12 +1,12 @@
-arr = [L,E,B,R,O,S]
+arr = ['L', 'E', 'B', 'R', 'O', 'S']
 a = input()
 
 index = -1
-for i, char in enumerate(arr) :
-    if char == a :
+for i, char in enumerate(arr):
+    if char == a:
         index = i
 
-if index == -1 :
+if index == -1:
     print("None")
-else :
+else:
     print(index)
