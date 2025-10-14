@@ -1,11 +1,12 @@
-N = int(input())
+# 변수 선언 및 입력:
+n = int(input())
 
-sum = 0
-def f(N) :
-    global sum
-    if N == 0 :
-        return sum
-    sum += N
-    return f(N-1)
 
-print(f(N))
+def get_sum(n):
+    if n == 0:
+        return 0
+    
+    return get_sum(n - 1) + n
+
+
+print(get_sum(n))
