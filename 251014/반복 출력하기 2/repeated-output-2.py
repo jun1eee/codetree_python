@@ -6,4 +6,4 @@ def printStars(n) :
     print("HelloWorld")
     printStars(n-1)
 
-printStars(4)
+printStars(n)
