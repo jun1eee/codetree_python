@@ -9,9 +9,12 @@ for _ in range(5) :
     code_name, score = input().split()
     users.append(User(code_name, int(score)))
 
-min_idx = 0
-for i in range(1, 5) :
-    if users[min_idx].score > users[i].score :
-        min_idx = i
-print(users[min_idx].code_name, users[min_idx].score)
+min_user = min(users, key=lambda u: u.score)
+
+print(min_user.code_name, min_user.score)
+# min_idx = 0
+# for i in range(1, 5) :
+#     if users[min_idx].score > users[i].score :
+#         min_idx = i
+# print(users[min_idx].code_name, users[min_idx].score)
 
