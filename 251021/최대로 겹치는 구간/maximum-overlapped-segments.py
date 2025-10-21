@@ -1,19 +1,19 @@
-n = int(input().strip())
-events = []                 # (x, type)  type: +1 = 시작, -1 = 끝
+n = int(input())
+events = []  # (x, delta)  start:+1, end:-1
 
 for _ in range(n):
     x1, x2 = map(int, input().split())
-    # 구간 [x1, x2] (닫힌 구간) 가정
-    events.append((x1, +1))
-    events.append((x2, -1))
+    # 닫힌 구간 [x1, x2]이지만 '끝점만 접촉'은 겹침 아님 => end를 먼저 처리
+    events.append((x1, +1))   # 시작
+    events.append((x2, -1))   # 끝
 
-# 같은 좌표일 때 시작을 끝보다 먼저 처리해야 닫힌 구간 겹침이 반영됨
-events.sort(key=lambda e: (e[0], 0 if e[1] == +1 else 1))
+# 같은 x에서는 end(-1)를 start(+1)보다 먼저 처리
+events.sort(key=lambda e: (e[0], 0 if e[1] == -1 else 1))
 
 curr = 0
 ans = 0
-for _, t in events:
-    curr += t
+for _, d in events:
+    curr += d
     if curr > ans:
         ans = curr
 
