@@ -6,6 +6,8 @@ cnt = 1
 for i in range(1,n) :
     if arr[i] == arr[i-1] :
         cnt += 1
+    elif arr[i] != arr[i-1] :
+        cnt = 1
     if max_cnt < cnt :
         max_cnt = cnt
 
