@@ -6,16 +6,14 @@ for _ in range(n) :
     dir, dist = input().split()
     dist = int(dist)
     if dir == 'E' :
-        x += dx[0] * dist
-        y += dy[0] * dist 
+        move_dir = 0
     elif dir == 'W' :
-        x += dx[1] * dist
-        y += dy[1] * dist 
+        move_dir = 1 
     elif dir == 'S' :
-        x += dx[2] * dist
-        y += dy[2] * dist
+        move_dir = 2
     else :
-        x += dx[3] * dist
-        y += dy[3] * dist
+        move_dir = 3
+    x += dx[move_dir] * dist
+    y += dy[move_dir] * dist
 
 print(x, y)
