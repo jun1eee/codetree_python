@@ -1,13 +1,14 @@
+import sys
 n = int(input())
 points = [tuple(map(int, input().split())) for _ in range(n)]
 x = [p[0] for p in points]
 y = [p[1] for p in points]
 
-min_nul = 0
+min_nul = sys.maxsize
 for i in range(n) :
     nul = 0
-    min_x = 0
-    min_y = 0
+    min_x = sys.maxsize
+    min_y = sys.maxsize
     max_x = 0
     max_y = 0
     for j in range(n) :
