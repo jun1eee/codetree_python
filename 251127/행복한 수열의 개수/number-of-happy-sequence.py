@@ -4,6 +4,7 @@ grid = [list(map(int, input().split())) for _ in range(n)]
 cnt = 0
 
 for row in range(n) :
+    happy = False
     for start in range(n-m+1) :
         check = True
         for i in range(m) :
@@ -11,16 +12,24 @@ for row in range(n) :
                 check = False
                 break
         
-    if check == True :
+        if check :
+            happy = True
+            break
+    if happy :
         cnt += 1
 
 for col in range(n) :
+    happy = False
     for start in range(n-m+1) :
         check = True
         for j in range(m) :
             if grid[start][col] != grid[start + j][col] :
                 check = False
                 break
-    if check == True :
+        if check == True :
+            happy = True
+            break
+    if happy :
         cnt += 1
+
 print(cnt)
