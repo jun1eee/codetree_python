@@ -40,4 +40,5 @@ for col in range(N):
 # 3. 결과 출력
 for i in range(N) :
     for j in range(N) :
-        print(board[i][j], end="")
+        print(board[i][j], end=" ")
+    print()
