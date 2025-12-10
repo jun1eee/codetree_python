@@ -30,6 +30,8 @@ for _ in range(t) :
     
     for index in range(m) :
         cnt_array[r[index]][c[index]] += 1
+        if cnt_array[r[index]][c[index]] >= 2 :
+            cnt_array[r[index]][c[index]] = 0
 
 cnt = 0
 for i in range(n) :
@@ -37,7 +39,3 @@ for i in range(n) :
         if cnt_array[i][j] == 1 :
             cnt += 1
 print(cnt)
-    
-    
-        
-
