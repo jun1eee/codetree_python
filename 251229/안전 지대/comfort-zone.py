@@ -17,8 +17,8 @@ def get_cnt(k) :
             visited[i][j] = False
     for i in range(n) :
         for j in range(m) :
-            if 0<=nr<n and 0<=nc<m and not visited[nr][nc] and grid[nr][nc] > k :
-                visited[nr][nc] = True
+            if 0<=i<n and 0<=j<m and not visited[i][j] and grid[i][j] > k :
+                visited[i][j] = True
                 cnt += 1
                 dfs(i,j,k)
 max_cnt = -1
