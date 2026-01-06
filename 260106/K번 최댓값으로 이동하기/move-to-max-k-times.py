@@ -25,7 +25,7 @@ def bfs():
         for dx, dy in dirs :
             nx, ny = x + dx, y + dy
 
-            if 0<=nx<n and 0<=ny<n and not visited[nx][ny] and grid[x][y] < num :
+            if 0<=nx<n and 0<=ny<n and not visited[nx][ny] and grid[nx][ny] < num :
                 q.append((nx,ny))
                 visited[nx][ny] = True
 
@@ -56,7 +56,7 @@ def move():
             if update(best, new) :
                 best = new
     
-    if best = NOT_EXISTS :
+    if best == NOT_EXISTS :
         return False
     else :
         curr_cell = best
