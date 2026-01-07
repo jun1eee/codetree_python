@@ -21,19 +21,22 @@ public class Main {
 
         arr = new int[n][m];
 
+        int max = 0;
+
         for (int i = 0; i < n; i++) {
             st = new StringTokenizer(br.readLine(), " ");
             for (int j = 0; j < m; j++) {
                 arr[i][j] = Integer.parseInt(st.nextToken());
+                if (arr[i][j] > max) {
+                    max = arr[i][j];
+                }
             }
         }
 
         int maxCount = 0;
         int maxK = 0;
 
-        int k = 1;
-
-        while (true) {    // k이상인 영역이 있을 동안
+        for (int k = 1; k <= max; k++) {
             int count = 0;
             visited = new boolean[n][m];
 
@@ -47,16 +50,10 @@ public class Main {
                 }
             }
 
-            if (count == 0) {
-                break;
-            }
-
             if (count > maxCount) {
                 maxCount = count;
                 maxK = k;
             }
-            
-            k++;
         }
 
         System.out.print(maxK + " " + maxCount);
@@ -67,7 +64,7 @@ public class Main {
             int nx = x + dx[i];
             int ny = y + dy[i];
 
-            if (nx >= 0 && nx < n && ny >= 0 && ny < m && arr[nx][ny] > k && !visited[nx][ny]) {
+            if (nx >= 0 && nx < n && ny >= 0 && ny < m && !visited[nx][ny] && arr[nx][ny] > k) {
                 visited[nx][ny] = true;
                 dfs(nx, ny, k);
             } 
