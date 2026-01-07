@@ -18,12 +18,12 @@ for i in range(n) :
 def bfs() :
     while q :
         rr, cc, dist = q.popleft()
+        if grid[rr][cc] == 3 :
+            return dist
         for dr, dc in dirs :
             nr, nc = rr + dr, cc + dc
             if 0<=nr<n and 0<=nc<n and grid[nr][nc] != 1 and not visited[nr][nc] :
                 visited[nr][nc] = True
-                if grid[nr][nc] == 3 :
-                    return dist + 1
                 q.append((nr,nc, dist + 1))
     return -1
 
