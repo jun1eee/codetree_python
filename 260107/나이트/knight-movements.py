@@ -14,8 +14,8 @@ def bfs() :
     global ans
     while q :
         r, c = q.popleft()
-        if r == r2 and c == c2 :
-            ans = dist[r2][c2]
+        if r == r2 - 1 and c == c2 - 1 :
+            ans = dist[r2 - 1][c2 - 1]
             return
 
         for dr, dc in dirs :
@@ -25,8 +25,8 @@ def bfs() :
                 dist[nr][nc] = dist[r][c] + 1
                 q.append((nr,nc))
 
-q.append((r1, c1))
-visited[r1][c1] = True
+q.append((r1-1, c1-1))
+visited[r1-1][c1-1] = True
 bfs()
 
 if ans == sys.maxsize :
