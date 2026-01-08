@@ -1,17 +1,16 @@
 n = int(input())
 lines = []
-for _ in range(n):
+for _ in range(n) :
     l, r = map(int, input().split())
-    lines.append((l, r))
+    lines.append((l,r))
 
-lines.sort(key=lambda x: (x[1], x[0]))
+lines.sort(key=lambda x: (x[1],x[0]))
 
-count = 0
-last_end = -float('inf')
+cnt = 0
+last_end = -1
 
-for start, end in lines:
-    if start > last_end:
-        count += 1
+for start, end in lines :
+    if start > last_end :
+        cnt += 1
         last_end = end
-
-print(count)
+print(cnt)
