@@ -15,7 +15,7 @@ def cal_dist() :
 
 def back(idx, num) :
     global ans
-    if num == 2 :
+    if num == m :
         ans = min(ans, cal_dist())
         return
     if idx == n :
