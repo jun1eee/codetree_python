@@ -13,3 +13,5 @@ for s in str :
     if dict[s] == 1 :
         print(s)
         break
+    else :
+        print("None")
