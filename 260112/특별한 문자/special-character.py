@@ -9,10 +9,12 @@ for s in str :
     else :
         dict[s] = 1
 
+check = False
 for s in str :
     if dict[s] == 1 :
         print(s)
+        check = True
         break
-    else :
-        print("None")
-        break
+
+if not check:
+    print("None")
