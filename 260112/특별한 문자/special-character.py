@@ -15,3 +15,4 @@ for s in str :
         break
     else :
         print("None")
+        break
