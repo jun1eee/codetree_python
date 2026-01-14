@@ -23,9 +23,10 @@ public class Main {
 
         if (min == Integer.MAX_VALUE) {
             System.out.println(-1);
-        } else {
-            System.out.println(min);
+            return;
         }
+
+        System.out.println(min);
     }
 
     public static void func(int start, int count) {
