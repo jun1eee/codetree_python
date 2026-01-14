@@ -31,7 +31,7 @@ public class Main {
 
     public static void func(int start, int count) {
         // 최소 점프 횟수
-        if (start == n-1) {
+        if (start >= n-1) {
             if (count < min) {
                 min = count;
             }
