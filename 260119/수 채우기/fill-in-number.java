@@ -22,6 +22,10 @@ public class Main {
             if (n % 5 == 0) {
                 break;
             }
+
+            if (n == 0) {
+                System.out.println(count);
+            }
         }
 
         if (flag) {
