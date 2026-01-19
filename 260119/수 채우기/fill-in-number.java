@@ -9,6 +9,7 @@ public class Main {
 
         int count = 0;
         boolean flag = false;
+        boolean zeroFlag = false;
 
         while (true) {
             n -= 2;
@@ -24,12 +25,18 @@ public class Main {
             }
 
             if (n == 0) {
-                System.out.println(count);
+                zeroFlag = true;
+                break;
             }
         }
 
         if (flag) {
             System.out.println(-1);
+            return;
+        }
+
+        if (zeroFlag) {
+            System.out.println(count);
             return;
         }
 
