@@ -8,14 +8,24 @@ public class Main {
         int n = Integer.parseInt(br.readLine());
 
         int count = 0;
+        boolean flag = false;
 
         while (true) {
             n -= 2;
             count++;
 
+            if (n < 0) {
+                flag = true;
+                break;
+            }
+
             if (n % 5 == 0) {
                 break;
             }
+        }
+
+        if (flag) {
+            System.out.println(-1);
         }
 
         while (true) {
@@ -29,7 +39,7 @@ public class Main {
 
         if (n == 0) {
             System.out.println(count);
-        } else if (n > 0) {
+        } else if (n < 0) {
             System.out.println(-1);
         }
     }
