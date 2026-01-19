@@ -42,9 +42,7 @@ public class Main {
         //     System.out.println(0);
         // }
 
-        for (int i = 0; i < n; i++) {
-            arr2[i] = arr1[i];
-        }
+        System.arraycopy(arr1, 0, arr2, 0, arr1.length);
 
         Arrays.sort(arr1);   // 2, 3, 6, 9, 10
 
