@@ -22,16 +22,22 @@ public class Main {
         int[] dp = new int[n+1];  // dp[i]: 위치가 i번째일때 최대 점프 횟수
 
         dp[1] = 0;
-        
-        if (arr[1] >= 1) {
+
+        if (arr[1] > 0) {
             dp[2] = 1;
         }
 
         // 현재 위치 i
         for (int i = 3; i <= n; i++) {
             for (int j = 1; j <= i-1; j++) {
-                if (dp[j] > 0 && j + arr[j] >= i) {  // 비교 위치 + 최대 점프 가능 거리
-                    dp[i] = Math.max(dp[i], dp[j] + 1);
+                if (j == 1) {
+                    if (j + arr[j] >= i) {
+                        dp[i] = Math.max(dp[i], dp[j] + 1);
+                    }
+                } else {
+                    if (dp[j] > 0 && j + arr[j] >= i) {  // 비교 위치 + 최대 점프 가능 거리
+                        dp[i] = Math.max(dp[i], dp[j] + 1);
+                    }
                 }
             }
         }
