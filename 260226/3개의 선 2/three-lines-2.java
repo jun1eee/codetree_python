@@ -10,14 +10,14 @@ public class Main {
 
         List<int[]> pointList = new ArrayList<>();
 
-        int[][] visited = new int[n+1][n+1];
-
         for (int i = 0; i < n; i++) {
             st = new StringTokenizer(br.readLine(), " ");
             int x = Integer.parseInt(st.nextToken());
             int y = Integer.parseInt(st.nextToken());
             pointList.add(new int[] {x, y});
         }
+
+        boolean[] visited = new boolean[n];
 
         Set<Integer> xSet = new HashSet<>();
         Set<Integer> ySet = new HashSet<>();
@@ -26,15 +26,20 @@ public class Main {
             int[] temp1 = pointList.get(i);
             int temp1X = temp1[0];
             int temp1Y = temp1[1];
+            visited[i] = true;
 
             for (int j = i+1; j < n; j++) {
                 int[] temp2 = pointList.get(j);
                 int temp2X = temp2[0];
                 int temp2Y = temp2[1];
 
-                if (temp1X == temp2X) {
+                if (!visited[j] && temp1X == temp2X) {
+                    visited[j] = true;
                     xSet.add(temp1X);
-                } else if (temp1Y == temp2Y) {
+                } 
+                
+                if (!visited[j] && temp1Y == temp2Y) {
+                    visited[j] = true;
                     ySet.add(temp1Y);
                 }
             }
@@ -42,7 +47,7 @@ public class Main {
 
         if (xSet.size() + ySet.size() == 3) {
             System.out.println(1);
-        } else {
+        } else if (xSet.size() + ySet.size() < 3) {
             System.out.println(0);
         }
     }
