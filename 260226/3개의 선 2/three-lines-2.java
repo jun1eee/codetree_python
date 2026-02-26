@@ -26,7 +26,6 @@ public class Main {
             int[] temp1 = pointList.get(i);
             int temp1X = temp1[0];
             int temp1Y = temp1[1];
-            visited[i] = true;
 
             for (int j = i+1; j < n; j++) {
                 int[] temp2 = pointList.get(j);
@@ -34,6 +33,7 @@ public class Main {
                 int temp2Y = temp2[1];
 
                 if (!visited[j] && temp1X == temp2X) {
+                    visited[i] = true;
                     visited[j] = true;
                     xSet.add(temp1X);
                 }
@@ -45,13 +45,10 @@ public class Main {
             }
         }
 
-        visited = new boolean[n];
-
         for (int i = 0; i < n-1; i++) {
             int[] temp1 = pointList.get(i);
             int temp1X = temp1[0];
             int temp1Y = temp1[1];
-            visited[i] = true;
 
             for (int j = i+1; j < n; j++) {
                 int[] temp2 = pointList.get(j);
@@ -59,6 +56,7 @@ public class Main {
                 int temp2Y = temp2[1];
 
                 if (!visited[j] && temp1Y == temp2Y) {
+                    visited[i] = true;
                     visited[j] = true;
                     ySet.add(temp1Y);
                 }
