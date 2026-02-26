@@ -46,8 +46,10 @@ public class Main {
         }
 
         if (xSet.size() + ySet.size() == 3) {
+            System.out.println(xSet.size() + ySet.size());
             System.out.println(1);
         } else if (xSet.size() + ySet.size() < 3) {
+            System.out.println(xSet.size() + ySet.size());
             System.out.println(0);
         }
     }
