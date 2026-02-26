@@ -45,7 +45,7 @@ public class Main {
             }
         }
 
-        if (xSet.size() + ySet.size() >= 3) {
+        if (xSet.size() + ySet.size() <= 3) {
             System.out.println(1);
         } else {
             System.out.println(0);
